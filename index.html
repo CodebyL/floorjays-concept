@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floor Jays (website concept)</title>
+<meta name="description" content="Website concept for Floor Jays, a flooring contractor based in Hauppauge, NY: carpet, stair runners, laminate, new floors and quick installation.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --linen:#F4EEE4;--linen-2:#EAE1D3;--paper:#FFFCF7;--oak:#C08A52;--oak-l:#E2C29A;--oak-d:#7A4A1E;--walnut:#5A3A1E;
+ --char:#262421;--char-2:#3A3632;--muted:#5C554D;--line:#D9CDBB;
+ --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
+ --wrap:1280px;--r:3px;
+ --display:"Unbounded","Work Sans",system-ui,sans-serif;--body:"Work Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--body);font-size:18px;line-height:1.65;color:var(--char);background:var(--linen);overflow-x:hidden}
+a{color:var(--oak-d)}
+h1,h2,h3{margin:0;line-height:1.1}
+p{margin:0 0 var(--s3)}
+:focus-visible{outline:3px solid var(--oak-d);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s5)}
+.concept{background:var(--char);color:#EFE6D8;font-size:14px;text-align:center;padding:var(--s2) var(--s3);line-height:1.45}
+.concept a{color:var(--oak-l);font-weight:600}
+.planks{background-color:var(--oak);background-image:
+ repeating-linear-gradient(0deg,transparent 0 30px,rgba(60,35,12,.35) 30px 32px),
+ repeating-linear-gradient(90deg,transparent 0 238px,rgba(60,35,12,.3) 238px 240px),
+ linear-gradient(90deg,rgba(255,255,255,.08),rgba(0,0,0,.06))}
+
+header{background:var(--linen);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.hbar{display:flex;align-items:center;gap:var(--s4);min-height:80px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--char);margin-right:auto}
+.logo b{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--s2)}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;color:var(--char);font-weight:500;font-size:16px;position:relative}
+nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:8px;height:2px;background:var(--oak);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;font-family:var(--body);font-weight:600;font-size:17px;text-decoration:none;border:2px solid transparent;border-radius:var(--r);cursor:pointer;transition:background .2s,color .2s}
+.btn-char{background:var(--char);color:var(--paper)}
+.btn-char:hover{background:var(--walnut)}
+.btn-oak{background:var(--oak-l);color:var(--char);border-color:var(--char)}
+.btn-oak:hover{background:var(--oak)}
+.btn-line{border-color:var(--char);color:var(--char);background:transparent}
+.btn-line:hover{background:var(--paper)}
+.hcall{min-height:46px;font-size:16px;padding:0 18px}
+.menu-btn{display:none;min-height:48px;padding:0 16px;border:2px solid var(--char);background:transparent;font:600 15px var(--body);color:var(--char);cursor:pointer;border-radius:var(--r)}
+
+/* hero */
+.hero{padding:var(--s7) 0 0;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--s6);align-items:end}
+.loc{font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--oak-d);margin-bottom:var(--s4)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,74px);letter-spacing:-.04em;line-height:1.02;margin-bottom:var(--s5)}
+h1 .ln{display:block}
+h1 .ln:nth-child(2){padding-left:1.1em}
+.lede{font-size:20px;max-width:30em;color:var(--muted);margin-bottom:var(--s5)}
+.actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-bottom:var(--s7)}
+.hero-art svg{display:block;width:100%;height:auto}
+.lift{animation:lift 5s ease-in-out infinite;transform-box:fill-box;transform-origin:left bottom}
+@keyframes lift{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
+.band{height:84px;border-top:2px solid var(--char)}
+
+/* proof line */
+.proof{background:var(--char);color:var(--paper)}
+.proof .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s6);padding-top:var(--s5);padding-bottom:var(--s5)}
+.proof .big{font-family:var(--display);font-weight:700;font-size:44px;letter-spacing:-.04em;color:var(--oak-l)}
+.proof .it{font-size:17px;line-height:1.4;color:#E9E0D2}
+.proof .it b{display:block;color:#fff;font-size:19px}
+
+section{padding:var(--s8) 0}
+.h2{font-family:var(--body);font-weight:700;font-size:clamp(32px,3.6vw,50px);letter-spacing:-.03em;margin-bottom:var(--s3)}
+.intro{font-size:19px;color:var(--muted);max-width:32em}
+.num{font-family:var(--display);font-weight:500;font-size:14px;color:var(--oak-d);letter-spacing:.04em;display:block;margin-bottom:var(--s3)}
+
+/* staggered planks services */
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
+.floorplan{display:grid;gap:var(--s2)}
+.course{display:grid;gap:var(--s2)}
+.c1{grid-template-columns:1.6fr 1fr}
+.c2{grid-template-columns:1fr 1.25fr 1fr}
+.plank{background:var(--paper);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr;min-width:0}
+.plank .sw{height:96px;border-bottom:1px solid var(--line)}
+.plank .tx{padding:var(--s4)}
+.plank h3{font-size:24px;font-weight:700;letter-spacing:-.015em;margin-bottom:var(--s2)}
+.plank p{margin:0;color:var(--muted);font-size:17px}
+.sw-carpet{background-color:#B9AC98;background-image:radial-gradient(#A89A84 1px,transparent 1.5px),radial-gradient(#C9BEAC 1px,transparent 1.5px);background-size:6px 6px,6px 6px;background-position:0 0,3px 3px}
+.sw-runner{background:linear-gradient(90deg,#8E8172 0 18%,#F1E9DC 18% 22%,#3F4A5A 22% 78%,#F1E9DC 78% 82%,#8E8172 82%)}
+.sw-lam{background-color:#A9A39A;background-image:repeating-linear-gradient(0deg,transparent 0 30px,#857F76 30px 32px),repeating-linear-gradient(90deg,transparent 0 180px,#857F76 180px 182px)}
+.sw-oak{background-color:#C08A52;background-image:repeating-linear-gradient(0deg,transparent 0 22px,#7A4A1E 22px 24px),repeating-linear-gradient(90deg,transparent 0 140px,rgba(90,58,30,.6) 140px 142px),repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,255,255,.08) 5px 6px)}
+.sw-quick{background:repeating-linear-gradient(-45deg,var(--char) 0 14px,var(--oak-l) 14px 28px)}
+
+/* visualizer */
+.viz{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.viz-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s6);align-items:start}
+.room{background:var(--linen-2);border:1px solid var(--line);padding:var(--s4)}
+.room svg{display:block;width:100%;height:auto}
+.room .cap{display:flex;justify-content:space-between;gap:var(--s3);font-size:14px;color:var(--muted);margin-bottom:var(--s2)}
+.ctl fieldset{border:0;margin:0 0 var(--s5);padding:0}
+.ctl legend{font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--s3);color:var(--oak-d)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--char)}
+.seg .o{position:relative}
+.seg .o + .o{border-left:2px solid var(--char)}
+.seg input,.tiles input{position:absolute;opacity:0;inset:0;margin:0}
+.seg label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:6px 8px;cursor:pointer;font-weight:600;font-size:16px;line-height:1.2}
+.seg input:checked + label{background:var(--char);color:var(--paper)}
+.seg input:focus-visible + label,.tiles input:focus-visible + label{outline:3px solid var(--oak);outline-offset:-5px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
+.tiles .o{position:relative}
+.tiles label{display:flex;align-items:center;gap:12px;min-height:64px;padding:8px 12px 8px 8px;border:2px solid var(--line);background:#fff;cursor:pointer;font-weight:600;font-size:16px;line-height:1.2}
+.tiles label .s{flex:none;width:46px;height:46px;border:1px solid rgba(0,0,0,.15)}
+.tiles input:checked + label{border-color:var(--char);box-shadow:inset 0 0 0 2px var(--char)}
+.sw-herr{background-color:#B57E47;background-image:linear-gradient(45deg,#9C6834 25%,transparent 25% 75%,#9C6834 75%),linear-gradient(-45deg,#CD9A62 25%,transparent 25% 75%,#CD9A62 75%);background-size:14px 14px}
+.calc{border-top:2px solid var(--char);padding-top:var(--s4)}
+.calc h3{font-size:22px;margin-bottom:var(--s3)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.out{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin:var(--s4) 0 var(--s3);background:var(--char);color:var(--paper);padding:var(--s4)}
+.out span{display:block;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:#D8CCBA}
+.out b{font-family:var(--display);font-weight:500;font-size:30px;letter-spacing:-.03em;color:#fff}
+.out b small{font-family:var(--body);font-size:16px;font-weight:500;color:#D8CCBA;letter-spacing:0}
+.chk{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:500}
+.chk input{width:22px;height:22px;accent-color:var(--char)}
+.sample{font-size:14.5px;color:var(--muted);border-left:3px solid var(--oak);padding-left:12px;margin-top:var(--s4)}
+
+/* reviews */
+.rv{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--char);border-bottom:2px solid var(--char)}
+.rv figure{margin:0;padding:var(--s6) var(--s5) var(--s6) 0}
+.rv figure + figure{border-left:1px solid var(--line);padding-left:var(--s5);padding-right:0}
+.rv blockquote{margin:0 0 var(--s4);font-size:clamp(26px,2.6vw,38px);font-weight:600;line-height:1.22;letter-spacing:-.02em}
+.rv figcaption{font-size:16px;color:var(--muted)}
+.rv figcaption b{color:var(--char)}
+.stars{display:inline-flex;gap:2px;margin-bottom:var(--s3)}
+
+/* area + form */
+.end-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s7);align-items:start}
+.facts{margin:var(--s4) 0 0}
+.facts div{padding:var(--s3) 0;border-top:1px solid var(--line)}
+.facts dt{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--oak-d)}
+.facts dd{margin:4px 0 0;font-size:19px}
+.small{font-size:15px;color:var(--muted)}
+form.est{background:var(--paper);border:1px solid var(--line);padding:var(--s5);border-top:8px solid var(--oak)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:600;font-size:16px}
+input[type=text],input[type=tel],input[type=number],select,textarea{font:inherit;font-size:17px;min-height:52px;padding:12px 14px;border:2px solid #CBBDA8;border-radius:var(--r);background:#fff;color:var(--char);width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--oak);outline-offset:1px;border-color:var(--char)}
+.err-msg{display:none;color:#A12B12;font-size:14px;font-weight:600}
+.field.err input,.field.err select,.field.err textarea{border-color:#A12B12}
+.field.err .err-msg{display:block}
+.demo-note{font-size:14px;color:var(--muted);margin:var(--s3) 0 0}
+.done{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--char);padding:var(--s6) var(--s5)}
+.done h3{font-size:28px;margin-bottom:var(--s2)}
+
+footer{background:var(--char);color:#DCD2C4;padding:0 0 var(--s7)}
+footer .band{border-top:0;height:40px;margin-bottom:var(--s7)}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--s6)}
+footer h3{color:#fff;font-size:18px;margin-bottom:var(--s3)}
+footer a{color:var(--oak-l)}
+.disclaimer{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(255,255,255,.15);font-size:14px;color:#BFB4A5}
+.sticky-call{display:none}
+
+@media (max-width:1060px){
+ .hero-grid,.viz-grid,.end-grid,.svc-head{grid-template-columns:1fr}
+ .svc-head,.end-grid{gap:var(--s4)}
+ .hero-art{max-width:620px}
+ .c2{grid-template-columns:1fr 1fr}
+ .c2 .plank:last-child{grid-column:1/-1}
+ .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+ .menu-btn{display:block}
+ nav{position:absolute;left:0;right:0;top:100%;background:var(--linen);border-bottom:2px solid var(--char);display:none;padding:var(--s3) var(--s4) var(--s4)}
+ nav.open{display:block}
+ nav ul{flex-direction:column}
+ nav a{font-size:19px}
+}
+@media (max-width:640px){
+ body{font-size:17px}
+ .wrap{padding:0 var(--s3)}
+ section{padding:var(--s7) 0}
+ .hero{padding-top:var(--s6)}
+ .hcall{display:none}
+ h1 .ln:nth-child(2){padding-left:0}
+ .actions{margin-bottom:var(--s5)}
+ .actions .btn{flex:1 1 100%}
+ .band{height:56px}
+ .proof .big{font-size:36px}
+ .c1,.c2{grid-template-columns:1fr}
+ .plank .sw{height:64px}
+ .room{padding:var(--s3)}
+ .seg label{font-size:15px}
+ .tiles label{font-size:15px;gap:8px}
+ .tiles label .s{width:36px;height:36px}
+ .rv{grid-template-columns:1fr}
+ .rv figure{padding:var(--s5) 0}
+ .rv figure + figure{border-left:0;border-top:1px solid var(--line);padding-left:0}
+ .fgrid{grid-template-columns:1fr}
+ form.est,.done{padding:var(--s4)}
+ .out b{font-size:24px}
+ .f-grid{grid-template-columns:1fr}
+ .sticky-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:40;min-height:56px;box-shadow:0 12px 28px -8px rgba(0,0,0,.4)}
+ footer{padding-bottom:120px}
+}
+</style>
+</head>
+<body>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official Floor Jays site.</div>
+
+<header>
+ <div class="wrap hbar">
+  <a class="logo" href="#top" aria-label="Floor Jays, home">
+   <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect x="2" y="4" width="26" height="9" fill="#C08A52" stroke="#262421" stroke-width="2"/><rect x="14" y="16" width="26" height="9" fill="#E2C29A" stroke="#262421" stroke-width="2"/><rect x="2" y="28" width="26" height="9" fill="#7A4A1E" stroke="#262421" stroke-width="2"/></svg>
+   <b>Floor Jays</b>
+  </a>
+  <nav id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#floors">Floors</a></li>
+    <li><a href="#visualizer">Room visualizer</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#estimate">Estimate</a></li>
+   </ul>
+  </nav>
+  <a class="btn btn-char hcall" href="tel:+16317445147">(631) 744-5147</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+ <div class="wrap hero-grid">
+  <div>
+   <p class="loc">Flooring contractor, Hauppauge NY</p>
+   <h1><span class="ln">New floors,</span><span class="ln">laid quick</span><span class="ln">and clean.</span></h1>
+   <p class="lede">Carpet, stair runners, laminate and brand new floors. Floor Jays keeps the process simple, so you get your room back fast.</p>
+   <div class="actions">
+    <a class="btn btn-char" href="tel:+16317445147">
+     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+     Call (631) 744-5147</a>
+    <a class="btn btn-line" href="#estimate">Get a free estimate</a>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 600 470" role="img" aria-label="Illustration of a room corner with new oak planks being laid, one plank lifted, and a rolled stair runner">
+    <defs>
+     <pattern id="hp" width="120" height="32" patternUnits="userSpaceOnUse"><rect width="120" height="32" fill="#C08A52"/><rect y="16" width="120" height="16" fill="#B57E47"/><path d="M0 16H120M0 32H120M118 0V16M58 16V32" stroke="#7A4A1E" stroke-width="1.6"/><path d="M8 6H60M70 10H110M14 24H50M70 27H112" stroke="#D9A86E" stroke-width="1.2"/></pattern>
+     <pattern id="hsub" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#D9CBB3"/><path d="M0 0L40 40M40 0L0 40" stroke="#C7B699" stroke-width="1"/></pattern>
+    </defs>
+    <polygon points="300,40 560,190 560,300 300,150" fill="#EAE1D3" stroke="#262421" stroke-width="2.5"/>
+    <polygon points="300,40 40,190 40,300 300,150" fill="#F8F3EA" stroke="#262421" stroke-width="2.5"/>
+    <polygon points="372,104 470,160 470,226 372,170" fill="#BFD3D9" stroke="#262421" stroke-width="2.5"/>
+    <path d="M421 132V198M372 137L470 193" stroke="#262421" stroke-width="2"/>
+    <polygon points="300,150 560,300 300,450 40,300" fill="url(#hsub)" stroke="#262421" stroke-width="2.5"/>
+    <g transform="matrix(0.866,0.5,-0.866,0.5,300,150)">
+     <rect x="0" y="0" width="300" height="190" fill="url(#hp)"/>
+     <rect x="0" y="0" width="300" height="190" fill="none" stroke="#262421" stroke-width="2"/>
+    </g>
+    <polygon points="300,150 560,300 560,292 300,142" fill="#262421"/>
+    <polygon points="300,150 40,300 40,292 300,142" fill="#262421"/>
+    <g class="lift">
+     <g transform="matrix(0.866,0.5,-0.866,0.5,300,150)"><rect x="200" y="206" width="120" height="16" fill="#CD9A62" stroke="#262421" stroke-width="2"/></g>
+    </g>
+    <g stroke="#262421" stroke-width="2.5" fill="#E2C29A"><path d="M90 330l40-22 10 6-40 22z"/><path d="M100 336v10l40-22v-10"/></g>
+   </svg>
+  </div>
+ </div>
+ <div class="band planks" aria-hidden="true"></div>
+</section>
+
+<div class="proof">
+ <div class="wrap" aria-label="Highlights from the Google listing">
+  <span class="big">5.0</span>
+  <span class="it"><b>50 Google reviews</b>Average rating on the public listing</span>
+  <span class="it"><b>Hauppauge, NY</b>Service-area business</span>
+  <span class="it"><b>Open until 8 PM</b>Call after work</span>
+ </div>
+</div>
+
+<section id="floors">
+ <div class="wrap">
+  <div class="svc-head">
+   <div><span class="num">01 / What we lay</span><h2 class="h2">Pick the floor. We handle the rest.</h2></div>
+   <p class="intro">From soft carpet in a bedroom to a full set of new floors, here is what Floor Jays installs. Customers mention the team being quick, professional and affordable.</p>
+  </div>
+  <div class="floorplan">
+   <div class="course c1">
+    <article class="plank"><div class="sw sw-oak" aria-hidden="true"></div><div class="tx"><h3>New floors</h3><p>Out with the old, in with a new floor that fits how you live in the room.</p></div></article>
+    <article class="plank"><div class="sw sw-carpet" aria-hidden="true"></div><div class="tx"><h3>Carpet</h3><p>Soft, quiet and warm underfoot for bedrooms, dens and basements.</p></div></article>
+   </div>
+   <div class="course c2">
+    <article class="plank"><div class="sw sw-runner" aria-hidden="true"></div><div class="tx"><h3>Stair runners</h3><p>A runner down the middle of the stairs for grip, quiet steps and a finished look.</p></div></article>
+    <article class="plank"><div class="sw sw-lam" aria-hidden="true"></div><div class="tx"><h3>Laminate</h3><p>The look of wood or stone with a tough surface for busy rooms.</p></div></article>
+    <article class="plank"><div class="sw sw-quick" aria-hidden="true"></div><div class="tx"><h3>Quick installation</h3><p>Customers say the process is smooth and easy, start to finish.</p></div></article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="viz" id="visualizer">
+ <div class="wrap">
+  <div class="svc-head">
+   <div><span class="num">02 / Room visualizer</span><h2 class="h2">See the floor in the room.</h2></div>
+   <p class="intro">Choose a room and a floor and the drawing updates. Then measure the room to get a rough square footage to bring to your estimate.</p>
+  </div>
+  <div class="viz-grid">
+   <div class="room">
+    <div class="cap"><span id="roomCap">Living room, oak plank</span><span>Sample illustration</span></div>
+    <svg id="roomSvg" viewBox="0 0 620 470" role="img" aria-labelledby="roomTitle">
+     <title id="roomTitle">Illustration of a living room with an oak plank floor</title>
+     <defs>
+      <pattern id="p-oak" width="96" height="28" patternUnits="userSpaceOnUse"><rect width="96" height="14" fill="#C68F55"/><rect y="14" width="96" height="14" fill="#B57E47"/><path d="M0 14H96M0 28H96M94 0V14M46 14V28" stroke="#7A4A1E" stroke-width="1.2"/><path d="M6 5H50M60 9H88M10 20H40M54 23H90" stroke="#DBAA70" stroke-width="1"/></pattern>
+      <pattern id="p-lam" width="140" height="40" patternUnits="userSpaceOnUse"><rect width="140" height="20" fill="#ADA79E"/><rect y="20" width="140" height="20" fill="#9F998F"/><path d="M0 20H140M0 40H140M138 0V20M68 20V40" stroke="#76716A" stroke-width="1.2"/><path d="M10 8H80M90 13H130M16 30H60M80 33H128" stroke="#BDB8B0" stroke-width="1"/></pattern>
+      <pattern id="p-herr" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45) scale(9)"><g id="herrG" stroke="#6E431B" stroke-width=".08"></g></pattern>
+      <pattern id="p-carpet" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#BCAF9B"/><circle cx="2" cy="2" r="1" fill="#AC9E88"/><circle cx="6" cy="6" r="1" fill="#CABFAE"/></pattern>
+     </defs>
+     <g id="roomG"></g>
+    </svg>
+   </div>
+   <div class="ctl">
+    <fieldset>
+     <legend>Room</legend>
+     <div class="seg">
+      <div class="o"><input type="radio" name="room" id="r1" value="living" checked><label for="r1">Living room</label></div>
+      <div class="o"><input type="radio" name="room" id="r2" value="bedroom"><label for="r2">Bedroom</label></div>
+      <div class="o"><input type="radio" name="room" id="r3" value="den"><label for="r3">Den</label></div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Floor</legend>
+     <div class="tiles">
+      <div class="o"><input type="radio" name="floor" id="f1" value="oak" checked><label for="f1"><span class="s sw-oak"></span>Oak plank</label></div>
+      <div class="o"><input type="radio" name="floor" id="f2" value="lam"><label for="f2"><span class="s sw-lam"></span>Gray laminate</label></div>
+      <div class="o"><input type="radio" name="floor" id="f3" value="herr"><label for="f3"><span class="s sw-herr"></span>Herringbone</label></div>
+      <div class="o"><input type="radio" name="floor" id="f4" value="carpet"><label for="f4"><span class="s sw-carpet"></span>Carpet</label></div>
+     </div>
+    </fieldset>
+    <div class="calc">
+     <h3>Square footage calculator</h3>
+     <div class="cgrid">
+      <div class="field"><label for="len">Length (ft)</label><input type="number" id="len" min="1" max="200" step="0.5" value="18" inputmode="decimal"></div>
+      <div class="field"><label for="wid">Width (ft)</label><input type="number" id="wid" min="1" max="200" step="0.5" value="14" inputmode="decimal"></div>
+     </div>
+     <label class="chk"><input type="checkbox" id="waste" checked> Add 10% for cuts and waste</label>
+     <div class="out" aria-live="polite">
+      <div><span>Room area</span><b id="area">252 <small>sq ft</small></b></div>
+      <div><span>Plan for</span><b id="total">278 <small>sq ft</small></b></div>
+     </div>
+     <button type="button" class="btn btn-oak" id="useCalc" style="width:100%">Use this in my estimate request</button>
+    </div>
+    <p class="sample">Sample tool. Floors are drawings, not Floor Jays product photos. Square footage is a rough, illustrative number, not a quote. Floor Jays measures before any job.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="reviews">
+ <div class="wrap">
+  <span class="num">03 / Google reviews</span>
+  <h2 class="h2" style="margin-bottom:var(--s6)">What homeowners say.</h2>
+  <div class="rv">
+   <figure>
+    <span class="stars" aria-label="5 stars"><svg width="100" height="18" viewBox="0 0 100 18" aria-hidden="true"><g fill="#C08A52"><path id="st" d="M9 1l2.3 5 5.4.5-4.1 3.6 1.2 5.3L9 12.7 4.2 15.4l1.2-5.3L1.3 6.5l5.4-.5z"/><use href="#st" x="20"/><use href="#st" x="40"/><use href="#st" x="60"/><use href="#st" x="80"/></g></svg></span>
+    <blockquote>"The team was quick, professional, and affordable."</blockquote>
+    <figcaption><b>Daniel S.</b>, Google review</figcaption>
+   </figure>
+   <figure>
+    <span class="stars" aria-label="5 stars"><svg width="100" height="18" viewBox="0 0 100 18" aria-hidden="true"><g fill="#C08A52"><use href="#st"/><use href="#st" x="20"/><use href="#st" x="40"/><use href="#st" x="60"/><use href="#st" x="80"/></g></svg></span>
+    <blockquote>"Floor Jays is amazing! They make everything such a smooth and easy process!"</blockquote>
+    <figcaption><b>Laura G.</b>, Google review</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section id="estimate" style="padding-top:0">
+ <div class="wrap end-grid">
+  <div>
+   <span class="num">04 / Free estimate</span>
+   <h2 class="h2">Tell us about the room.</h2>
+   <p class="intro">Send the basics and Floor Jays will follow up to set a time to measure.</p>
+   <dl class="facts">
+    <div><dt>Phone</dt><dd><a href="tel:+16317445147">(631) 744-5147</a></dd></div>
+    <div><dt>Based in</dt><dd>Hauppauge, NY</dd><dd class="small">Service-area business, no showroom address listed. Towns served to confirm.</dd></div>
+    <div><dt>Hours</dt><dd>Open until 8 PM</dd><dd class="small">Days and opening time to confirm.</dd></div>
+   </dl>
+  </div>
+  <div>
+   <form class="demo est" data-done="doneEst" novalidate>
+    <div class="fgrid">
+     <div class="field"><label for="e-name">Name</label><input type="text" id="e-name" autocomplete="name" required><span class="err-msg">Please add your name.</span></div>
+     <div class="field"><label for="e-phone">Phone</label><input type="tel" id="e-phone" autocomplete="tel" required><span class="err-msg">Please add a phone number.</span></div>
+     <div class="field"><label for="e-floor">Floor type</label><select id="e-floor" required><option value="">Choose one</option><option>Oak or wood-look plank</option><option>Laminate</option><option>Herringbone</option><option>Carpet</option><option>Stair runner</option><option>Not sure yet</option></select><span class="err-msg">Please choose a floor type.</span></div>
+     <div class="field"><label for="e-sqft">Approx. square feet</label><input type="text" id="e-sqft" inputmode="numeric" placeholder="Optional"></div>
+     <div class="field full"><label for="e-town">Town</label><input type="text" id="e-town" required><span class="err-msg">Please add your town.</span></div>
+     <div class="field full"><label for="e-msg">Rooms and details</label><textarea id="e-msg" placeholder="Which rooms, what is there now, any stairs..."></textarea></div>
+    </div>
+    <button class="btn btn-char" type="submit" style="margin-top:var(--s4)">Request my estimate</button>
+    <p class="demo-note">Demo form. This is a website concept. Nothing is sent or saved.</p>
+   </form>
+   <div class="done" id="doneEst" hidden tabindex="-1">
+    <h3>Demo complete.</h3>
+    <p>This is a website concept, so nothing was sent or saved. On the live site, this request would go to Floor Jays.</p>
+    <button class="btn btn-char start-over" type="button">Start over</button>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="band planks" aria-hidden="true"></div>
+ <div class="wrap">
+  <div class="f-grid">
+   <div><h3>Floor Jays</h3><p>Carpet, stair runners, laminate, new floors and quick installation.</p></div>
+   <div><h3>Contact</h3><p><a href="tel:+16317445147">(631) 744-5147</a><br>Based in Hauppauge, NY</p></div>
+   <div><h3>Hours</h3><p>Open until 8 PM</p></div>
+  </div>
+  <p class="disclaimer">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Floor Jays. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026. Short service descriptions are written for this concept, service list to confirm with the owner. Room and floor drawings are illustrations. The room visualizer, square footage calculator and estimate form are sample features; numbers are illustrative and nothing is sent or saved.</p>
+ </div>
+</footer>
+<a class="btn btn-char sticky-call" href="tel:+16317445147">Call (631) 744-5147</a>
+
+<script>
+(function(){
+ var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+ btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!o));btn.textContent=o?'Menu':'Close';nav.classList.toggle('open',!o)});
+ nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.setAttribute('aria-expanded','false');btn.textContent='Menu';nav.classList.remove('open')})});
+
+ var NS='http://www.w3.org/2000/svg';
+ // herringbone tile
+ var hg=document.getElementById('herrG'),h='';
+ for(var k=-9;k<=9;k++){for(var s=-12;s<=12;s+=6){
+  h+='<rect x="'+(k+s)+'" y="'+k+'" width="3" height="1" fill="#CB955A"/>';
+  h+='<rect x="'+(k+3+s)+'" y="'+(k-2)+'" width="1" height="3" fill="#95602E"/>';}}
+ hg.innerHTML=h;
+
+ var C=0.866,S=0.5,OX=310,OY=168,WH=150;
+ function P(x,y,z){return [(x-y)*C+OX,(x+y)*S+OY-(z||0)]}
+ function poly(pts,fill,extra){return '<polygon points="'+pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1)}).join(' ')+'" fill="'+fill+'" stroke="#262421" stroke-width="2" stroke-linejoin="round" '+(extra||'')+'/>'}
+ function box(x,y,w,d,z,hgt,top,left,right){
+  return poly([P(x,y+d,z),P(x+w,y+d,z),P(x+w,y+d,z+hgt),P(x,y+d,z+hgt)],left)+
+         poly([P(x+w,y,z),P(x+w,y+d,z),P(x+w,y+d,z+hgt),P(x+w,y,z+hgt)],right)+
+         poly([P(x,y,z+hgt),P(x+w,y,z+hgt),P(x+w,y+d,z+hgt),P(x,y+d,z+hgt)],top)}
+ var ROOMS={
+  living:{name:'Living room',W:300,D:240,wallL:'#F3ECE0',wallR:'#E6DCCB',ft:[18,14],furn:function(){return box(12,40,64,180,0,28,'#6E7F8C','#56656F','#4A5861')+box(12,40,18,180,28,40,'#7F909C','#56656F','#4A5861')+box(120,90,100,60,0,10,'#D8CBB4','#BFB096','#B3A387')+box(230,20,50,50,0,40,'#A27347','#7A4A1E','#6A3E17')}},
+  bedroom:{name:'Bedroom',W:260,D:230,wallL:'#EEF0EA',wallR:'#DDE2DA',ft:[14,12],furn:function(){return box(60,20,130,170,0,26,'#FFFCF7','#E4DACB','#D6CBBA')+box(60,20,130,30,26,40,'#8C9A86','#6F7C69','#62705C')+box(60,110,130,80,26,4,'#B9C4B4','#9AA695','#8E9A89')+box(200,20,44,40,0,40,'#A27347','#7A4A1E','#6A3E17')}},
+  den:{name:'Den',W:320,D:260,wallL:'#F1E6DA',wallR:'#E2D3C2',ft:[22,16],furn:function(){return box(20,30,40,160,0,30,'#7A5A44','#5A3A1E','#4E3219')+box(20,30,14,160,30,36,'#8A6A54','#5A3A1E','#4E3219')+box(120,90,110,70,0,26,'#8C6A4A','#6A4A2E','#5E4027')+box(240,30,60,24,0,70,'#3A3632','#262421','#1E1C1A')}}
+ };
+ var FLOORS={oak:['Oak plank','p-oak'],lam:['Gray laminate','p-lam'],herr:['Herringbone','p-herr'],carpet:['Carpet','p-carpet']};
+ var g=document.getElementById('roomG');
+ function draw(){
+  var r=ROOMS[document.querySelector('input[name=room]:checked').value],f=FLOORS[document.querySelector('input[name=floor]:checked').value];
+  var W=r.W,D=r.D,o='';
+  o+=poly([P(0,0,0),P(0,D,0),P(0,D,WH),P(0,0,WH)],r.wallL);
+  o+=poly([P(0,0,0),P(W,0,0),P(W,0,WH),P(0,0,WH)],r.wallR);
+  // window on right wall
+  o+=poly([P(W*.55,0,55),P(W*.85,0,55),P(W*.85,0,125),P(W*.55,0,125)],'#C5D8DE');
+  // floor
+  o+='<g transform="matrix('+C+','+S+','+(-C)+','+S+','+OX+','+OY+')"><rect x="0" y="0" width="'+W+'" height="'+D+'" fill="url(#'+f[1]+')" stroke="#262421" stroke-width="2.4"/></g>';
+  // baseboards
+  o+=poly([P(0,0,0),P(W,0,0),P(W,0,8),P(0,0,8)],'#FFFCF7');
+  o+=poly([P(0,0,0),P(0,D,0),P(0,D,8),P(0,0,8)],'#FFFCF7');
+  o+=r.furn();
+  g.innerHTML=o;
+  var lbl=r.name+', '+f[0].toLowerCase();
+  document.getElementById('roomCap').textContent=r.name+', '+f[0].toLowerCase();
+  document.getElementById('roomTitle').textContent='Illustration of a '+r.name.toLowerCase()+' with a '+f[0].toLowerCase()+' floor';
+ }
+ document.querySelectorAll('input[name=room]').forEach(function(i){i.addEventListener('change',function(){var r=ROOMS[i.value];document.getElementById('len').value=r.ft[0];document.getElementById('wid').value=r.ft[1];calc();draw()})});
+ document.querySelectorAll('input[name=floor]').forEach(function(i){i.addEventListener('change',draw)});
+ draw();
+
+ var len=document.getElementById('len'),wid=document.getElementById('wid'),waste=document.getElementById('waste');
+ function calc(){var a=Math.max(0,parseFloat(len.value)||0)*Math.max(0,parseFloat(wid.value)||0);var t=waste.checked?Math.ceil(a*1.1):Math.ceil(a);
+  document.getElementById('area').innerHTML=Math.round(a).toLocaleString()+' <small>sq ft</small>';document.getElementById('total').innerHTML=t.toLocaleString()+' <small>sq ft</small>';return t}
+ [len,wid,waste].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});calc();
+ document.getElementById('useCalc').addEventListener('click',function(){
+  var t=calc();document.getElementById('e-sqft').value=t;
+  var fv=document.querySelector('input[name=floor]:checked').value,map={oak:'Oak or wood-look plank',lam:'Laminate',herr:'Herringbone',carpet:'Carpet'};
+  document.getElementById('e-floor').value=map[fv];
+  document.getElementById('estimate').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  setTimeout(function(){document.getElementById('e-name').focus({preventScroll:true})},400)});
+
+ document.querySelectorAll('form.demo').forEach(function(f){
+  var done=document.getElementById(f.dataset.done);
+  f.addEventListener('submit',function(e){e.preventDefault();var first=null;
+   f.querySelectorAll('[required]').forEach(function(i){var ok=i.value.trim()!=='';i.closest('.field').classList.toggle('err',!ok);i.setAttribute('aria-invalid',String(!ok));if(!ok&&!first)first=i});
+   if(first){first.focus();return}
+   f.hidden=true;done.hidden=false;done.focus()});
+  done.querySelector('.start-over').addEventListener('click',function(){f.reset();f.querySelectorAll('.err').forEach(function(x){x.classList.remove('err')});done.hidden=true;f.hidden=false;f.querySelector('input').focus()});
+ });
+})();
+</script>
+</body>
+</html>
