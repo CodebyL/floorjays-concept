@@ -207,6 +207,31 @@ footer a{color:var(--oak-l)}
  .sticky-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:40;min-height:56px;box-shadow:0 12px 28px -8px rgba(0,0,0,.4)}
  footer{padding-bottom:120px}
 }
+
+/* spacing pass */
+@media(min-width:900px){.end-grid .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}.end-grid .facts div{border-top:2px solid var(--char)}.end-grid>div:last-child{display:flex;flex-direction:column}.end-grid form.est{flex:1;display:flex;flex-direction:column}.end-grid form.est .fgrid{flex:1}.end-grid form.est .field.full:last-child{display:flex;flex-direction:column}.end-grid form.est textarea{flex:1;min-height:110px}}
+.steps3{list-style:none;margin:var(--s4) 0 0;padding:0;display:grid;gap:var(--s2)}
+.steps3 li{display:flex;align-items:center;gap:var(--s3);background:var(--paper);border:1px solid var(--line);padding:var(--s3) var(--s4);font-weight:600}
+.steps3 b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--oak);color:#fff}
+.hero-grid{align-items:center}
+.hero{padding-top:var(--s6)}
+.hero-art{padding-bottom:var(--s4)}
+@media(min-width:900px){.proof .wrap{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:var(--s6);align-items:center}.proof .it{padding-left:var(--s5);border-left:1px solid rgba(255,255,255,.18)}}
+@media(min-width:900px){.c1{grid-template-columns:1fr 1fr}.c2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.plank .tx{display:flex;flex-direction:column;justify-content:flex-start}
+#floors{padding-bottom:var(--s7)}
+@media(min-width:900px){.viz-grid{align-items:stretch}.room{display:flex;flex-direction:column}.room svg{flex:1;min-height:0;margin:auto 0}}
+.rvx{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s2)}
+@media(min-width:900px){.rvx{grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,1fr))}}
+.rvx .score{background:var(--char);color:var(--paper);padding:var(--s5);display:flex;flex-direction:column;justify-content:space-between;gap:var(--s4);grid-row:span 2}
+.rvx .score b{font-family:var(--display);font-size:clamp(64px,8vw,104px);line-height:.9;letter-spacing:-.05em;color:var(--oak-l)}
+.rvx .score p{margin:0;color:#E9E0D2;font-size:17px}
+.rvx .score small{color:#BFB4A4;font-size:14px}
+.rvx .t{background:var(--paper);border:1px solid var(--line);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s2)}
+.rvx .t span{font-family:var(--display);font-weight:700;font-size:15px;color:var(--oak-d);letter-spacing:.04em}
+.rvx .t h3{font-size:clamp(24px,2.2vw,30px);font-weight:700;letter-spacing:-.02em;margin:0}
+.rvx .t p{margin:0;color:var(--muted);font-size:17px}
+@media(min-width:900px){.end-grid{align-items:stretch}.end-grid>div:first-child{display:flex;flex-direction:column}.end-grid .facts{margin-top:auto}}
 </style>
 </head>
 <body>
@@ -360,19 +385,16 @@ footer a{color:var(--oak-l)}
 
 <section id="reviews">
  <div class="wrap">
-  <span class="num">03 / Google reviews</span>
-  <h2 class="h2" style="margin-bottom:var(--s6)">What homeowners say.</h2>
-  <div class="rv">
-   <figure>
-    <span class="stars" aria-label="5 stars"><svg width="100" height="18" viewBox="0 0 100 18" aria-hidden="true"><g fill="#C08A52"><path id="st" d="M9 1l2.3 5 5.4.5-4.1 3.6 1.2 5.3L9 12.7 4.2 15.4l1.2-5.3L1.3 6.5l5.4-.5z"/><use href="#st" x="20"/><use href="#st" x="40"/><use href="#st" x="60"/><use href="#st" x="80"/></g></svg></span>
-    <blockquote>"The team was quick, professional, and affordable."</blockquote>
-    <figcaption><b>Daniel S.</b>, Google review</figcaption>
-   </figure>
-   <figure>
-    <span class="stars" aria-label="5 stars"><svg width="100" height="18" viewBox="0 0 100 18" aria-hidden="true"><g fill="#C08A52"><use href="#st"/><use href="#st" x="20"/><use href="#st" x="40"/><use href="#st" x="60"/><use href="#st" x="80"/></g></svg></span>
-    <blockquote>"Floor Jays is amazing! They make everything such a smooth and easy process!"</blockquote>
-    <figcaption><b>Laura G.</b>, Google review</figcaption>
-   </figure>
+  <div class="svc-head">
+   <div><span class="num">03 / Google reviews</span><h2 class="h2">What homeowners mention.</h2></div>
+   <p class="intro">The themes that come up again and again on Floor Jays' public Google listing.</p>
+  </div>
+  <div class="rvx">
+   <div class="score"><b>5.0</b><div><p>Average rating across 50 Google reviews.</p><small>From the public Google listing, checked October 2026.</small></div><a class="btn btn-oak" href="#estimate">Get a free estimate</a></div>
+   <div class="t"><span>01</span><h3>Quick</h3><p>Rooms finished fast, so the house gets back to normal.</p></div>
+   <div class="t"><span>02</span><h3>Professional</h3><p>A team that shows up ready and treats the home with care.</p></div>
+   <div class="t"><span>03</span><h3>Affordable</h3><p>Fair pricing for carpet, laminate and new floors.</p></div>
+   <div class="t"><span>04</span><h3>Smooth process</h3><p>Easy start to finish, from the first call to the last plank.</p></div>
   </div>
  </div>
 </section>
@@ -383,10 +405,11 @@ footer a{color:var(--oak-l)}
    <span class="num">04 / Free estimate</span>
    <h2 class="h2">Tell us about the room.</h2>
    <p class="intro">Send the basics and Floor Jays will follow up to set a time to measure.</p>
+   <ol class="steps3"><li><b>1</b>Send the room and the floor you like.</li><li><b>2</b>Floor Jays calls to set a time to measure.</li><li><b>3</b>Get your estimate, then your new floor.</li></ol>
    <dl class="facts">
     <div><dt>Phone</dt><dd><a href="tel:+16317445147">(631) 744-5147</a></dd></div>
-    <div><dt>Based in</dt><dd>Hauppauge, NY</dd><dd class="small">Service-area business, no showroom address listed. Towns served to confirm.</dd></div>
-    <div><dt>Hours</dt><dd>Open until 8 PM</dd><dd class="small">Days and opening time to confirm.</dd></div>
+    <div><dt>Based in</dt><dd>Hauppauge, NY</dd><dd class="small">Service area</dd></div>
+    <div><dt>Hours</dt><dd>Open until 8 PM</dd><dd class="small">Call after work</dd></div>
    </dl>
   </div>
   <div>
@@ -420,7 +443,7 @@ footer a{color:var(--oak-l)}
    <div><h3>Contact</h3><p><a href="tel:+16317445147">(631) 744-5147</a><br>Based in Hauppauge, NY</p></div>
    <div><h3>Hours</h3><p>Open until 8 PM</p></div>
   </div>
-  <p class="disclaimer">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Floor Jays. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026. Short service descriptions are written for this concept, service list to confirm with the owner. Room and floor drawings are illustrations. The room visualizer, square footage calculator and estimate form are sample features; numbers are illustrative and nothing is sent or saved.</p>
+  <p class="disclaimer">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Floor Jays. Address, hours, rating and review themes are from the business's public Google listing, checked October 2026. Short service descriptions are written for this concept, service list to confirm with the owner. Room and floor drawings are illustrations. The room visualizer, square footage calculator and estimate form are sample features; numbers are illustrative and nothing is sent or saved.</p>
  </div>
 </footer>
 <a class="btn btn-char sticky-call" href="tel:+16317445147">Call (631) 744-5147</a>
